@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/statistics.css">
   </head>
   <body>
     <div id="app">
@@ -12,8 +13,42 @@
           default content
         -->
         <h3 slot="header">custom header</h3>
-      </modal>
+        <statistics></statistics>
+      </modal>      
     </div>
+
+    <template id="grid-template">
+      <div class="statistics">
+        <div class="item stages-header">Этапы</div>        
+        <div class="item stages">ПП</div>
+        <div class="item stages">Договор</div>
+        <div class="item stages">КП</div>
+        <div class="item stages">ИСИ</div>
+        <div class="item stages">ИЭИ</div>
+        <div class="item stages">ИКИ</div>
+        <div class="item stages">ЗУР</div>
+        <div class="item stages">ОПР</div>
+        <div class="item stages">П</div>
+        <div class="item stages">ГГЭ</div>
+        <div class="item stages">ВЭ</div>
+        <div class="item stages">РД</div>
+        <div class="item stages">АН</div>
+
+        <div class="item customer1">Организация</div>
+        <div class="item parameter">% этапов со срывом</div>
+        <div class="item parameter">% этапов с угрозой срыва</div>
+        <div class="item parameter">Кол-во этапов</div>
+        
+        <div class="item customer1 customer2">Организация</div>
+        <div class="item parameter">% этапов со срывом</div>
+        <div class="item parameter">% этапов с угрозой срыва</div>
+        <div class="item parameter">Кол-во этапов</div>
+
+        <div class="item parameter-warning">2</div>
+        <div class="item parameter-attantion">1</div>
+        <div class="item parameter-amount">230</div>
+      </div>
+    </template>
 
     <template id="modal-template">
       <transition name="modal">
@@ -28,9 +63,7 @@
               </div>
     
               <div class="modal-body">
-                <slot name="body">
-                  default body
-                </slot>
+                <slot></slot>
               </div>
     
               <div class="modal-footer">
@@ -47,7 +80,8 @@
       </transition>
     </template>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+    <script src="js/statistics.js"></script>
     <script src="js/modal.js"></script>
   </body>
 </html>

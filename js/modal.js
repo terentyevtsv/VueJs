@@ -6,7 +6,10 @@ Vue.component('modal', {
 // start app
 var modal = new Vue({
   el: '#app',
+  components: {
+    'statistics': Statistics
+  },
   data: {
     showModal: false
-  }
+  },  
 });
