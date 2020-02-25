@@ -8,6 +8,14 @@
   window.Statistics = {
     props: ['stages', 'customers'],
     template: '#grid-template',
+    computed: {
+      statisticsGridStyleObject: function () {
+        return {
+          'grid-template-columns': '1fr repeat(' + this.customers.length + ', 100px 120px 120px)',
+          'grid-template-rows': 'repeat(' + (this.stages.length + 2) + ', 1fr)'
+        };
+      }
+    },
     methods: {    
       customerStyleObject: function (index) {
         var start = index * CUSTOMERS_COLUMNS_COUNT + COLUMNS_OFFSET;
@@ -19,8 +27,7 @@
         start += CUSTOMERS_COLUMNS_COUNT;
         
         return styleObject;
-      },
-      
+      },      
       stageValueStyleObject: function (stageIndex, customerIndex, indexOffset) {
         var styleObject = {
           'grid-row-start': stageIndex + HEAD_HEIGHT_OFFSET,
@@ -28,7 +35,7 @@
         };
 
         return styleObject;
-      }
+      }      
     }
   };
 })();

@@ -18,7 +18,7 @@
     </div>
 
     <template id="grid-template">
-      <div class="statistics">
+      <div class="statistics" v-bind:style="statisticsGridStyleObject">
         <div class="item stages-header">Этапы</div>        
         <div class="item stages" v-for="stage in stages">{{stage}}</div>        
 
