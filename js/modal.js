@@ -39,7 +39,7 @@
       for (var j = 0; j < STAGES.length; ++j) {
         customers[i].stages[j] = {
           failureCount: window.utils.getRandomInteger(0, 5),
-          dangerCount: window.utils.getRandomInteger(0, 5),
+          dangerCount: window.utils.getRandomInteger(6, 10),
           stageCount: window.utils.getRandomInteger(30, 200),
         };
       }
