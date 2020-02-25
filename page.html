@@ -25,7 +25,7 @@
         <template v-for="(customer, customerIndex) in customers">
           <div 
             class="item customer" 
-            v-bind:style="customerStyleObject()">
+            v-bind:style="customerStyleObject(customerIndex)">
             <a href="#">{{customer.name}}</a>
           </div>
 
