@@ -19,6 +19,7 @@
   grid-row-end: 3;
 
   background-color: #d9d9d9;
+  padding-top: 34px;
 }
 
 .stages {
@@ -26,6 +27,7 @@
   grid-column-start: 1;
     
   background-color: #bfbfbf;
+  padding-top: 13px;
 }
 
 .customer1 {
@@ -36,6 +38,7 @@
   grid-row-start: 1; 
   
   background-color: #bfbfbf;
+  padding-top: 12px;
 }
 
 .customer2 {
@@ -58,7 +61,7 @@
   background-color: #f7b580;
 }
 
-.parameter-attantion {
+.parameter-attention {
   grid-column-start: 3;   
   grid-row-start: 3;  
 
@@ -70,4 +73,10 @@
   grid-row-start: 3;  
 
   background-color: #b4c2d7;
+}
+
+.parameter-warning,
+.parameter-attention,
+.parameter-amount {
+  padding-top: 12px;
 }
