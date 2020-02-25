@@ -22,7 +22,7 @@
         <div class="item stages-header">Этапы</div>        
         <div class="item stages" v-for="stage in stages">{{stage}}</div>        
 
-        <template v-for="customer in customers">
+        <template v-for="(customer, customerIndex) in customers">
           <div 
             class="item customer" 
             v-bind:style="customerStyleObject()">
@@ -33,7 +33,7 @@
           <div class="item parameter">% этапов с угрозой срыва</div>
           <div class="item parameter">Кол-во этапов</div>
 
-          <template v-for="subStage in customer.stages">
+          <template v-for="(subStage, stageIndex) in customer.stages">
             <div class="item parameter-warning">{{subStage.failureCount}}</div>
             <div class="item parameter-attention">{{subStage.dangerCount}}</div>
             <div class="item parameter-amount">{{subStage.stageCount}}</div>
