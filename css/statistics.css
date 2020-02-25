@@ -45,22 +45,22 @@
 }
 
 .parameter-warning {
-  grid-column-start: 2;   
-  grid-row-start: 3;   
+  /* grid-column-start: 2;   
+  grid-row-start: 3;    */
 
   background-color: #f7b580;
 }
 
 .parameter-attention {
-  grid-column-start: 3;   
-  grid-row-start: 3;  
+  /* grid-column-start: 3;   
+  grid-row-start: 3;   */
 
   background-color: #fcce87;
 }
 
 .parameter-amount {
-  grid-column-start: 4;   
-  grid-row-start: 3;  
+  /* grid-column-start: 4;   
+  grid-row-start: 3;   */
 
   background-color: #b4c2d7;
 }

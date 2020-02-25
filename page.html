@@ -34,9 +34,21 @@
           <div class="item parameter">Кол-во этапов</div>
 
           <template v-for="(subStage, stageIndex) in customer.stages">
-            <div class="item parameter-warning">{{subStage.failureCount}}</div>
-            <div class="item parameter-attention">{{subStage.dangerCount}}</div>
-            <div class="item parameter-amount">{{subStage.stageCount}}</div>
+            <div 
+              class="item parameter-warning"
+              v-bind:style="stageValueStyleObject(stageIndex, customerIndex, 0)">
+              {{subStage.failureCount}}
+            </div>
+            <div 
+              class="item parameter-attention"
+              v-bind:style="stageValueStyleObject(stageIndex, customerIndex, 1)">
+              {{subStage.dangerCount}}
+            </div>
+            <div 
+              class="item parameter-amount"
+              v-bind:style="stageValueStyleObject(stageIndex, customerIndex, 2)">
+              {{subStage.stageCount}}
+            </div>
           </template>
         </template>        
       </div>
