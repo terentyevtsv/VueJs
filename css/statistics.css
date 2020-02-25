@@ -30,22 +30,12 @@
   padding-top: 13px;
 }
 
-.customer1 {
-  font-weight: bold;
+.customer {
+  grid-row-start: 1;  
 
-  grid-column-start: 2; 
-  grid-column-end: 5;
-  grid-row-start: 1; 
-  
+  font-weight: bold;
   background-color: #bfbfbf;
   padding-top: 12px;
-}
-
-.customer2 {
-  grid-column-start: 5; 
-  grid-column-end: 8;
-
-  background-color: #bfbfbf;
 }
 
 .parameter {

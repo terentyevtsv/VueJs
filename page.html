@@ -13,40 +13,32 @@
           default content
         -->
         <h3 slot="header">custom header</h3>
-        <statistics></statistics>
+        <statistics :stages="stages" :customers="customers"></statistics>
       </modal>      
     </div>
 
     <template id="grid-template">
       <div class="statistics">
         <div class="item stages-header">Этапы</div>        
-        <div class="item stages">ПП</div>
-        <div class="item stages">Договор</div>
-        <div class="item stages">КП</div>
-        <div class="item stages">ИСИ</div>
-        <div class="item stages">ИЭИ</div>
-        <div class="item stages">ИКИ</div>
-        <div class="item stages">ЗУР</div>
-        <div class="item stages">ОПР</div>
-        <div class="item stages">П</div>
-        <div class="item stages">ГГЭ</div>
-        <div class="item stages">ВЭ</div>
-        <div class="item stages">РД</div>
-        <div class="item stages">АН</div>
+        <div class="item stages" v-for="stage in stages">{{stage}}</div>        
 
-        <div class="item customer1">Организация</div>
-        <div class="item parameter">% этапов со срывом</div>
-        <div class="item parameter">% этапов с угрозой срыва</div>
-        <div class="item parameter">Кол-во этапов</div>
-        
-        <div class="item customer1 customer2">Организация</div>
-        <div class="item parameter">% этапов со срывом</div>
-        <div class="item parameter">% этапов с угрозой срыва</div>
-        <div class="item parameter">Кол-во этапов</div>
+        <template v-for="customer in customers">
+          <div 
+            class="item customer" 
+            v-bind:style="customerStyleObject()">
+            <a href="#">{{customer.name}}</a>
+          </div>
 
-        <div class="item parameter-warning">2</div>
-        <div class="item parameter-attention">1</div>
-        <div class="item parameter-amount">230</div>
+          <div class="item parameter">% этапов со срывом</div>
+          <div class="item parameter">% этапов с угрозой срыва</div>
+          <div class="item parameter">Кол-во этапов</div>
+
+          <template v-for="subStage in customer.stages">
+            <div class="item parameter-warning">{{subStage.failureCount}}</div>
+            <div class="item parameter-attention">{{subStage.dangerCount}}</div>
+            <div class="item parameter-amount">{{subStage.stageCount}}</div>
+          </template>
+        </template>        
       </div>
     </template>
 
@@ -80,7 +72,8 @@
       </transition>
     </template>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/utils.js"></script>    
     <script src="js/statistics.js"></script>
     <script src="js/modal.js"></script>
   </body>
