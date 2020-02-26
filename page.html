@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link href="css/multiselect.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/statistics.css">
   </head>
@@ -31,11 +32,10 @@
 
             <div class="customers-filter-container">
               <label for="customers-id">Заказчики</label>
-              <select class="customers" id="customers-id">
-                <option class="customer-item">
-                  <input type="checkbox" id="customer-item-id">
-                  <!-- <label for="customer-item-id">Заказчик</label> -->
-                </option>
+              <select class="customers" id="customers-id" multiple>
+                <option class="customer-item" value="customer1">Заказчик1</option>
+                <option class="customer-item" value="customer2">Заказчик2</option>
+                <option class="customer-item" value="customer3">Заказчик3</option>
               </select>
               <input type="checkbox" id="all-customers-id">
               <label class="visually-hidden" for="all-customers-id">
@@ -126,7 +126,8 @@
       </transition>
     </template>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/multiselect.min.js"></script>
+    <script src="node_modules/vue/dist/vue.min.js"></script>
     <script src="js/utils.js"></script>    
     <script src="js/statistics.js"></script>
     <script src="js/modal.js"></script>

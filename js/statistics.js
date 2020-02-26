@@ -8,6 +8,9 @@
   window.Statistics = {
     props: ['stages', 'customers'],
     template: '#grid-template',
+    mounted: function () {
+      document.multiselect('#customers-id');
+    },
     computed: {
       statisticsGridStyleObject: function () {
         return {
