@@ -18,40 +18,82 @@
     </div>
 
     <template id="grid-template">
-      <div class="statistics" v-bind:style="statisticsGridStyleObject">
-        <div class="item stages-header">Этапы</div>        
-        <div class="item stages" v-for="stage in stages">{{stage}}</div>        
+      <div>
+        <section class="filters">
+          <h2 class="visually-hidden">Фильтр таблицы статистики</h2>
+          <form class="form-filter">
+            <div class="developers-container">
+              <label for="developers-id">Генпроектировщик</label>
+              <select class="developers" id="developers-id">
+                <option class="developer-item">СамараНИПИнефть</option>
+              </select>
+            </div>            
 
-        <template v-for="(customer, customerIndex) in customers">
-          <div 
-            class="item customer" 
-            v-bind:style="customerStyleObject(customerIndex)">
-            <a href="#">{{customer.name}}</a>
-          </div>
+            <div class="customers-filter-container">
+              <label for="customers-id">Заказчики</label>
+              <select class="customers" id="customers-id">
+                <option class="customer-item">
+                  <input type="checkbox" id="customer-item-id">
+                  <!-- <label for="customer-item-id">Заказчик</label> -->
+                </option>
+              </select>
+              <input type="checkbox" id="all-customers-id">
+              <label class="visually-hidden" for="all-customers-id">
+                Выбрать всех заказчиков
+              </label>
+            </div>
 
-          <div class="item parameter">% этапов со срывом</div>
-          <div class="item parameter">% этапов с угрозой срыва</div>
-          <div class="item parameter">Кол-во этапов</div>
+            <div class="plan-years-container">
+              <label for="plan-years-id">Плановый год</label>
+              <select class="plan-years" id="plan-years-id">
+                <option>2020</option>
+              </select>
+            </div>
 
-          <template v-for="(subStage, stageIndex) in customer.stages">
-            <div 
-              class="item parameter-warning"
-              v-bind:style="stageValueStyleObject(stageIndex, customerIndex, 0)">
-              {{subStage.failureCount}}
+            <div class="important-projects-container">
+              <input type="checkbox" id="important-projects-id">
+              <label for="important-projects-id">Ключевые проекты</label>
             </div>
+
+            <button type="submit" class="btn btn-update">Обновить</button>
+          </form>
+        </section>
+        <section class="statistics" v-bind:style="statisticsGridStyleObject">
+          <h2 class="visually-hidden">Таблица статистики по проектам</h2>
+          <div class="item stages-header">Этапы</div>        
+          <div class="item stages" v-for="stage in stages">{{stage}}</div>        
+  
+          <template v-for="(customer, customerIndex) in customers">
             <div 
-              class="item parameter-attention"
-              v-bind:style="stageValueStyleObject(stageIndex, customerIndex, 1)">
-              {{subStage.dangerCount}}
+              class="item customer" 
+              v-bind:style="customerStyleObject(customerIndex)">
+              <a href="#">{{customer.name}}</a>
             </div>
-            <div 
-              class="item parameter-amount"
-              v-bind:style="stageValueStyleObject(stageIndex, customerIndex, 2)">
-              {{subStage.stageCount}}
-            </div>
-          </template>
-        </template>        
-      </div>
+  
+            <div class="item parameter">% этапов со срывом</div>
+            <div class="item parameter">% этапов с угрозой срыва</div>
+            <div class="item parameter">Кол-во этапов</div>
+  
+            <template v-for="(subStage, stageIndex) in customer.stages">
+              <div 
+                class="item parameter-warning"
+                v-bind:style="stageValueStyleObject(stageIndex, customerIndex, 0)">
+                {{subStage.failureCount}}
+              </div>
+              <div 
+                class="item parameter-attention"
+                v-bind:style="stageValueStyleObject(stageIndex, customerIndex, 1)">
+                {{subStage.dangerCount}}
+              </div>
+              <div 
+                class="item parameter-amount"
+                v-bind:style="stageValueStyleObject(stageIndex, customerIndex, 2)">
+                {{subStage.stageCount}}
+              </div>
+            </template>
+          </template>        
+        </section>
+      </div>      
     </template>
 
     <template id="modal-template">
