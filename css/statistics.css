@@ -19,6 +19,9 @@
 
   background-color: #d9d9d9;
   padding-top: 34px;
+
+  position: sticky;
+  left: -1px;
 }
 
 .stages {
@@ -27,6 +30,9 @@
     
   background-color: #bfbfbf;
   padding-top: 13px;
+
+  position: sticky;
+  left: -1px;
 }
 
 .customer {
