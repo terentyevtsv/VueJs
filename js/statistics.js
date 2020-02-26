@@ -11,7 +11,10 @@
     computed: {
       statisticsGridStyleObject: function () {
         return {
-          'grid-template-columns': '1fr repeat(' + this.customers.length + ', 100px 120px 120px)',
+          'grid-template-columns': 
+            'auto repeat(' +
+            this.customers.length +
+            ', minmax(100px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr))',
           'grid-template-rows': 'repeat(' + (this.stages.length + 2) + ', 1fr)'
         };
       }
