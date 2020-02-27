@@ -7,10 +7,7 @@
 
   window.Statistics = {
     props: ['stages', 'customers'],
-    template: '#grid-template',
-    mounted: function () {
-      document.multiselect('#customers-id');
-    },
+    template: '#grid-template',    
     computed: {
       statisticsGridStyleObject: function () {
         return {
