@@ -101,11 +101,15 @@ input[type='radio'].visually-hidden {
 }
 
 .btn {
-  border: 1px solid #475b79;
-  border-radius: 5px;
-  background-color: #475b79;
-  color: white;
+  border-radius: 5px;    
   padding: 7px 21px 8px 21px;
+  border: 1px solid lightgray;
+}
+
+.btn-update {
+  color: white;  
+  border-color: #475b79;
+  background-color: #475b79;
 }
 
 .customers {
