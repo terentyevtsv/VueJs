@@ -1,5 +1,10 @@
 <html>
   <head>
+    <link rel="stylesheet" href="js/kendo/styles/kendo.min.css/" />
+
+    <link rel="stylesheet" href="js/kendo/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="js/kendo/styles/kendo.custom.min.css"/>
+
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/statistics.css">
   </head>
@@ -120,6 +125,15 @@
         </div>
       </transition>
     </template>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="js/kendo/js/kendo.all.min.js"></script>
+    <script src="js/kendo/js/cultures/kendo.culture.ru-RU.min.js"></script>
+    <script src="js/kendo/js/messages/kendo.messages.ru-RU.js"></script>
+
+    <script>
+      kendo.culture("ru-RU");
+    </script>
 
     <script src="node_modules/vue/dist/vue.min.js"></script>
     <script src="js/utils.js"></script>    
