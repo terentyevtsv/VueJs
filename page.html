@@ -1,9 +1,8 @@
 <html>
   <head>
-    <link rel="stylesheet" href="js/kendo/styles/kendo.min.css/" />
+    <meta charset="utf-8"/>
 
-    <link rel="stylesheet" href="js/kendo/styles/kendo.common.min.css" />
-    <link rel="stylesheet" href="js/kendo/styles/kendo.custom.min.css"/>
+    <link rel="stylesheet" href="js/kendo/styles/kendo.default-v2.min.css"/>
 
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/statistics.css">
@@ -37,9 +36,7 @@
             <div class="customers-filter-container">
               <label for="customers-id">Заказчики</label>
               <select class="customers" id="customers-id" multiple>
-                <option class="customer-item" value="customer1">Заказчик1</option>
-                <option class="customer-item" value="customer2">Заказчик2</option>
-                <option class="customer-item" value="customer3">Заказчик3</option>
+                
               </select>             
             </div>
 
@@ -139,5 +136,16 @@
     <script src="js/utils.js"></script>    
     <script src="js/statistics.js"></script>
     <script src="js/modal.js"></script>
+
+    <script id="tagTemplate" type="text/x-kendo-template">
+      # if (values.length < 3) { #
+          # for (var idx = 0; idx < values.length; idx++) { #
+              #:values[idx]#
+              # if (idx < values.length - 1) {#, # } #
+          # } #
+      # } else { #
+        #:values.length# out of #:maxTotal#
+      # } #
+    </script>  
   </body>
 </html>

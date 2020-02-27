@@ -7,7 +7,20 @@
 
   window.Statistics = {
     props: ['stages', 'customers'],
-    template: '#grid-template',    
+    template: '#grid-template',
+    mounted: function () {
+      $("#customers-id").kendoMultiSelect({
+        dataSource: [
+          { id: 1, name: "Apples" },
+          { id: 2, name: "Oranges" },
+          { id: 2, name: "Bananas" }
+        ],
+        dataTextField: "name",
+        dataValueField: "id",
+        tagTemplate: kendo.template($("#tagTemplate").html()),
+        tagMode: "single"
+      });
+    },    
     computed: {
       statisticsGridStyleObject: function () {
         return {
