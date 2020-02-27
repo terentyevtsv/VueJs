@@ -18,7 +18,7 @@
             'auto repeat(' +
             this.customers.length +
             ', minmax(100px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr))',
-          'grid-template-rows': 'repeat(' + (this.stages.length + 2) + ', 1fr)'
+          'grid-template-rows': 'repeat(' + (this.stages.length + 2) + ', auto)'
         };
       }
     },

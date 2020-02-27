@@ -1,14 +1,8 @@
-﻿.multiselect-wrapper {
-	width: 180px;
+﻿.multiselect-wrapper {	
 	display: inline-block;
 	white-space: nowrap;
 	font-size: 12px;
 	font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
-}
-
-.multiselect-wrapper .multiselect-input {
-	width: 120px;
-	padding-right: 50px;
 }
 
 .multiselect-wrapper label {
