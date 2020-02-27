@@ -63,7 +63,8 @@
       return {
         showModal: false,
         customers: getCustomers(),
-        stages: STAGES   
+        stages: STAGES,
+        selectedDeveloper: ''
       }
     }  
   });

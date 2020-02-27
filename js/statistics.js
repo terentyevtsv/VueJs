@@ -4,11 +4,13 @@
   var CUSTOMERS_COLUMNS_COUNT = 3;
   var HEAD_HEIGHT_OFFSET = 3;
   var COLUMNS_OFFSET = 2;
-
+  
   window.Statistics = {
     props: ['stages', 'customers'],
-    template: '#grid-template',
+    template: '#grid-template',    
+    self: undefined,
     mounted: function () {
+      self = this;
       $("#customers-id").kendoMultiSelect({
         dataSource: [
           { id: 1, name: "Заказчик 1" },
@@ -36,7 +38,10 @@
           { id: 1, name: "СамараНИПИнефть" },
           { id: 2, name: "УфаНИПИнефть" },
           { id: 3, name: "ТомскНИПИнефть" }
-        ],
+        ],        
+        cascade: function () {
+          self.$emit('set-developer', this.text());
+        },
         dataTextField: "name",
         dataValueField: "id"        
       });

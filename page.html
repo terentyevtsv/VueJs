@@ -16,8 +16,13 @@
           you can use custom content here to overwrite
           default content
         -->
-        <h1 slot="header">Статистика по проектам</h1>
-        <statistics :stages="stages" :customers="customers"></statistics>
+        <h1 slot="header">Статистика по проектам {{ selectedDeveloper }}</h1>
+        <statistics 
+          :stages="stages"
+          :customers="customers"
+          v-on:set-developer="selectedDeveloper = $event"
+        >
+        </statistics>
       </modal>      
     </div>
 
