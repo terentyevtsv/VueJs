@@ -11,9 +11,9 @@
     mounted: function () {
       $("#customers-id").kendoMultiSelect({
         dataSource: [
-          { id: 1, name: "Apples" },
-          { id: 2, name: "Oranges" },
-          { id: 2, name: "Bananas" }
+          { id: 1, name: "Заказчик 1" },
+          { id: 2, name: "Заказчик 2" },
+          { id: 3, name: "Заказчик 3" }
         ],
         dataTextField: "name",
         dataValueField: "id",
