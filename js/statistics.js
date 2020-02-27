@@ -20,6 +20,26 @@
         tagTemplate: kendo.template($("#tagTemplate").html()),
         tagMode: "single"
       });
+
+      $("#plan-years-id").kendoDropDownList({
+        dataSource: [
+          { value: 2019, text: '2019' },
+          { value: 2020, text: '2020' },
+          { value: 2021, text: '2021' }
+        ],
+        dataTextField: "text",
+        dataValueField: "value"        
+      });
+
+      $("#developers-id").kendoDropDownList({
+        dataSource: [
+          { id: 1, name: "СамараНИПИнефть" },
+          { id: 2, name: "УфаНИПИнефть" },
+          { id: 3, name: "ТомскНИПИнефть" }
+        ],
+        dataTextField: "name",
+        dataValueField: "id"        
+      });
     },    
     computed: {
       statisticsGridStyleObject: function () {
